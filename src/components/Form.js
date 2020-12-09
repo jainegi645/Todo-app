@@ -1,14 +1,15 @@
 import React from 'react'
 
 
-const Form = ({ setInputText, todos, setTodos, inputText }) => {
+const Form = ({ setInputText,status,setStatus, todos, setTodos, inputText }) => {
     //writing js here
-
+    //this function work when input value changes
     const inputTextHandler = (e) => {
-        console.log(e.target.value); //takes event>target>its value
+        //console.log(e.target.value); //takes event>target>its value
         setInputText(e.target.value);
     };
-
+ 
+    // this fuction work when cliked on submit button
     const submiTodoHandler = (e) => {
 
         e.preventDefault(); //prevents the deault behaviour(stop refreshing)
@@ -19,6 +20,13 @@ const Form = ({ setInputText, todos, setTodos, inputText }) => {
         setInputText("");
     };
 
+ const statusHandler =(e) => {
+     //console.log(e.target.value);
+     setStatus(e.target.value);
+  
+ }
+ //console.log(status);
+
     return (
         <form>
             <input value={inputText} onChange={inputTextHandler} type="text" className="todo-input" /> {/*value ={inuputText} to set change the state to empty string  when clicked on submit */}
@@ -26,10 +34,10 @@ const Form = ({ setInputText, todos, setTodos, inputText }) => {
                 <i className="fas fa-plus-square"></i>
             </button>
             <div className="select">
-                <select name="todos" className="filter-todo">
+                <select onChange={statusHandler} name="todos" className="filter-todo">
                     <option value="all">all</option>
-                    <option value="checked">checked</option>
-                    <option value="unchecked">unchecked</option>
+                    <option value="completed">completed</option>
+                    <option value="uncompleted">uncompleted</option>
                 </select>
             </div>
         </form>

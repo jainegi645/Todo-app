@@ -10,6 +10,10 @@ body {
   color: white;
   min-height: 100vh;
 }
+.completed{
+  text-decoration: line-through;
+  opacity: 0.5;
+}
 
 header {
   font-size: 1.5rem;
