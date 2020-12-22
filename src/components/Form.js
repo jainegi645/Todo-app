@@ -29,10 +29,12 @@ const Form = ({ setInputText,status,setStatus, todos, setTodos, inputText }) => 
 
     return (
         <form>
+        <div className="input_style">
             <input value={inputText} onChange={inputTextHandler} type="text" className="todo-input" /> {/*value ={inuputText} to set change the state to empty string  when clicked on submit */}
             <button onClick={submiTodoHandler} className="todo-submit" type="submit">
                 <i className="fas fa-plus-square"></i>
             </button>
+            </div>
             <div className="select">
                 <select onChange={statusHandler} name="todos" className="filter-todo">
                     <option value="all">all</option>

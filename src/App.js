@@ -60,7 +60,7 @@ const getLocalTodos =() => {
   return (
    
     <div className="App">
-    <header>Jai's Todo List</header>
+    <header>Personal Todos App </header>
 
     <Form inputText={inputText}
      todos ={todos} 
